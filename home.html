@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Page</title>
+    <link rel="stylesheet" href="home.css">
+</head>
+<body>
+    <header>
+        <div>
+            <a href="home.html" class="logo"><h1>JUICE SHOP</h1></a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="cart.html">Cart</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section class="hero"> 
+        <div class="hero-content">
+            <h2></h2>
+            <p> </p>
+            
+        </div>
+    </section>
+    <section class="menu">
+        <h2>Our Fresh Juices</h2>
+        <div class="juice-container">
+            <div class="juice-card">
+                <img src="images/mango,jpg.jpeg" alt="Mango Juice">
+                <h3>Mango Juice</h3>
+                <p>₹50</p>
+                <a href="/cart.html"></a>
+                <button onclick="addCart('Mango Juice',50)">Add to Cart</button>
+            </div>
+            <div class="juice-card">
+                <img src="images/apple.jpeg" alt="Apple Juice">
+                <h3>Apple Juice</h3>
+                <p>₹15</p>
+                <a href="/cart.html"></a>
+                <button>Add to Cart</button>
+            </div>
+            <div class="juice-card">
+                <img src="images/WhatsApp Image 2025-10-27 at 12.42.31_b6e00b46.jpg" alt="Orange Juice">
+                <h3>Orange Juice</h3>
+                <p>₹60</p>
+                <a href="/cart.html">
+                <button>Add to Cart</button>
+                </a>
+            </div>
+            <div class="juice-card">
+                <img src="images/lemon.jpeg" alt="Lemon Juice">
+                <h3>lemon Juice</h3>
+                <p>₹20</p>
+                <a href="/cart.html">
+                <button>Add to Cart</button>
+                </a>
+            </div>
+            <div class="juice-card">
+                <img src="images/WhatsApp Image 2025-10-12 at 21.08.01_66be0c4b.jpg" alt="Strawberry Juice">
+                <h3>Strawberry Juice</h3>
+                <p>₹90</p>
+                <a href="/cart.html">
+                <button>Add to Cart</button>
+                </a>
+            </div>
+            <div class="juice-card">
+                <img src="images/WhatsApp Image 2025-10-27 at 12.42.30_4bcbace3.jpg" alt="Banana Juice">
+                <h3>Banana Juice</h3>
+                <p>₹30</p>
+                <a href="/cart.html">
+                <button>Add to Cart</button>
+                </a>
+            </div>
+            <div class="juice-card">
+                <img src="images/WhatsApp Image 2025-10-27 at 12.42.32_f64995ad.jpg" alt="Watermelon Juice">
+                <h3>Watermelon Juice</h3>
+                <p>₹60</p>
+                <a href="/cart.html">
+                <button>Add to Cart</button>
+                </a>
+            </div>
+            <div class="juice-card">
+                <img src="images/WhatsApp Image 2025-10-27 at 12.42.31_3ccee1d9.jpg" alt="Coconut Juice">
+                <h3>Coconut Juice</h3>
+                <p>₹80</p>
+                <a href="/cart.html">
+                <button>Add to Cart</button>
+                </a>
+            </div>
+            <div class="juice-card">
+                <img src="images/date.jpeg" alt="Date Juice">
+                <h3>Date Juice</h3>
+                <p>₹25</p>
+                <a href="/cart.html">
+                <button>Add to Cart</button>
+                </a>
+            </div>
+            <div class="juice-card">
+                <img src="images/WhatsApp Image 2025-10-27 at 12.42.31_4aa8f6ca.jpg" alt="Pineapple Juice">
+                <h3>Pineapple Juice</h3>
+                <p>₹35</p>
+                <a href="/cart.html"></a>
+                <button>Add to Cart</button>
+                </a>
+            </div>
+        </div>
+    </section>
+    <script>
+
+function addCart(name,price){
+
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+cart.push({
+name:name,
+price:price
+});
+
+localStorage.setItem("cart",JSON.stringify(cart));
+
+window.location="cart.html";
+}
+</script>
+
+
+
+</body>
+</html>

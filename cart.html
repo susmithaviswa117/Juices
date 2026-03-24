@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cart</title>
+    <link rel="stylesheet" href="home.css">
+</head>
+<body>
+    <header>
+        <div>
+        <a href="home.html" class="logo"><h1>JUICE SHOP</h1></a>
+        </div>
+    <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="cart.html">Cart</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+            <body>
+
+<script>
+fetch("http://http.localhost:8080/drink")
+.then(response => response.json())
+.then(data => {
+    console.log(data)
+})
+
+</script>
+
+<h2>Your Cart</h2>
+
+<table border="1">
+
+<tr>
+<th>Product Name</th>
+<th>Price</th>
+<th>Quantity</th>
+<th>Total</th>
+</tr>
+
+<tr>
+<td>Mango Juice</td>
+<td>80</td>
+<td>20</td>
+<td>1600</td>
+</tr>
+
+
+</table>
+
+
+<br>
+
+
+
+
+
+</body>
+</html>
