@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Juice Shop – Home</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --c1:#ff6b6b;--c2:#ffd93d;--c3:#6bcb77;--c4:#4d96ff;--c5:#ff922b;
+  --dark:#1a1a2e;--light:#f8f9fa;--gray:#6c757d;
+  --font-h:'Syne',sans-serif;--font-b:'Nunito',sans-serif;
+  --sh:0 4px 24px rgba(0,0,0,.1);--sh2:0 12px 40px rgba(0,0,0,.15);
+}
+html{scroll-behavior:smooth;}
+body{font-family:var(--font-b);background:#fff;color:var(--dark);overflow-x:hidden;}
+::-webkit-scrollbar{width:6px;}::-webkit-scrollbar-thumb{background:var(--c1);border-radius:10px;}
+.nav{position:sticky;top:0;z-index:100;background:var(--dark);padding:16px 48px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 2px 20px rgba(0,0,0,.2);}
+.logo{font-family:var(--font-h);font-size:1.6rem;color:#fff;}
+.logo span{color:var(--c2);}
+.nav-links{display:flex;gap:8px;}
+.nav-link{color:rgba(255,255,255,.7);text-decoration:none;padding:8px 18px;border-radius:50px;font-weight:600;font-size:.88rem;transition:all .2s;}
+.nav-link:hover,.nav-link.active{background:var(--c2);color:var(--dark);}
+.nav-cart{background:var(--c1);color:#fff;padding:9px 22px;border-radius:50px;font-weight:700;font-size:.88rem;text-decoration:none;transition:all .2s;}
+.nav-cart:hover{background:#ff5252;}
+.hero{background:linear-gradient(135deg,var(--dark) 0%,#16213e 100%);padding:80px 48px;display:flex;align-items:center;justify-content:space-between;gap:40px;flex-wrap:wrap;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;width:600px;height:600px;background:radial-gradient(circle,rgba(255,107,107,.15),transparent 70%);top:-200px;right:-100px;}
+.hero-badge{display:inline-block;background:rgba(255,211,61,.15);border:1px solid var(--c2);color:var(--c2);padding:5px 14px;border-radius:50px;font-size:.78rem;font-weight:700;letter-spacing:.08em;margin-bottom:20px;}
+.hero h1{font-family:var(--font-h);font-size:clamp(2.4rem,5vw,3.8rem);color:#fff;line-height:1.1;margin-bottom:18px;}
+.hero h1 .hi{color:var(--c1);}
+.hero h1 .h2{color:var(--c2);}
+.hero h1 .h3{color:var(--c3);}
+.hero p{color:rgba(255,255,255,.6);font-size:1.05rem;line-height:1.75;margin-bottom:32px;max-width:420px;}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap;}
+.btn-pri{background:linear-gradient(135deg,var(--c1),var(--c5));color:#fff;border:none;padding:14px 32px;border-radius:50px;font-family:var(--font-b);font-size:1rem;font-weight:700;cursor:pointer;text-decoration:none;display:inline-block;transition:all .3s;box-shadow:0 4px 20px rgba(255,107,107,.4);}
+.btn-pri:hover{transform:translateY(-2px);}
+.btn-sec{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.3);padding:14px 32px;border-radius:50px;font-family:var(--font-b);font-size:1rem;font-weight:700;cursor:pointer;text-decoration:none;display:inline-block;transition:all .3s;}
+.btn-sec:hover{border-color:#fff;background:rgba(255,255,255,.1);}
+.hero-emojis{display:flex;flex-direction:column;gap:20px;position:relative;z-index:2;}
+.emoji-row{display:flex;gap:16px;}
+.e-ball{width:80px;height:80px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:2.2rem;animation:float 3s ease-in-out infinite;box-shadow:0 8px 32px rgba(0,0,0,.2);}
+@keyframes float{0%,100%{transform:translateY(0);}50%{transform:translateY(-10px);}}
+.e1{background:linear-gradient(135deg,#ff6b6b,#ff922b);animation-delay:0s;}
+.e2{background:linear-gradient(135deg,#ffd93d,#ff6b6b);animation-delay:.4s;}
+.e3{background:linear-gradient(135deg,#6bcb77,#4d96ff);animation-delay:.8s;}
+.e4{background:linear-gradient(135deg,#4d96ff,#a855f7);animation-delay:1.2s;}
+.stats{background:var(--c2);padding:24px 48px;display:flex;justify-content:space-around;flex-wrap:wrap;gap:16px;}
+.stat-num{font-family:var(--font-h);font-size:1.8rem;color:var(--dark);font-weight:800;}
+.stat-label{font-size:.82rem;color:rgba(26,26,46,.7);font-weight:600;text-align:center;}
+.menu-section{padding:72px 48px;background:var(--light);}
+.sec-head{text-align:center;margin-bottom:48px;}
+.sec-tag{display:inline-block;background:linear-gradient(135deg,var(--c1),var(--c5));color:#fff;padding:5px 16px;border-radius:50px;font-size:.75rem;font-weight:700;letter-spacing:.08em;margin-bottom:12px;}
+.sec-head h2{font-family:var(--font-h);font-size:clamp(1.8rem,3vw,2.6rem);color:var(--dark);}
+.sec-head p{color:var(--gray);margin-top:8px;}
+.juice-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:24px;}
+.juice-card{background:#fff;border-radius:24px;overflow:hidden;box-shadow:var(--sh);transition:all .3s;}
+.juice-card:hover{transform:translateY(-8px);box-shadow:var(--sh2);}
+.card-top{height:160px;display:flex;align-items:center;justify-content:center;font-size:4.5rem;}
+.c-orange{background:linear-gradient(135deg,#fff3e0,#ffe0b2);}
+.c-green{background:linear-gradient(135deg,#e8f5e9,#c8e6c9);}
+.c-red{background:linear-gradient(135deg,#fce4ec,#f8bbd0);}
+.c-yellow{background:linear-gradient(135deg,#fffde7,#fff9c4);}
+.c-blue{background:linear-gradient(135deg,#e3f2fd,#bbdefb);}
+.c-purple{background:linear-gradient(135deg,#f3e5f5,#e1bee7);}
+.card-body{padding:20px;}
+.card-body h3{font-family:var(--font-h);font-size:1.1rem;margin-bottom:6px;}
+.card-body p{font-size:.83rem;color:var(--gray);margin-bottom:16px;line-height:1.5;}
+.card-footer{display:flex;align-items:center;justify-content:space-between;}
+.juice-price{font-family:var(--font-h);font-size:1.3rem;font-weight:800;}
+.add-btn{border:none;padding:9px 18px;border-radius:50px;font-family:var(--font-b);font-weight:700;font-size:.82rem;cursor:pointer;color:#fff;transition:all .2s;}
+.add-btn:hover{transform:scale(1.05);}
+footer{background:var(--dark);color:#fff;text-align:center;padding:36px;}
+.f-logo{font-family:var(--font-h);font-size:1.6rem;margin-bottom:8px;}
+.f-logo span{color:var(--c2);}
+footer p{font-size:.85rem;color:rgba(255,255,255,.4);}
+@media(max-width:768px){
+  .nav{padding:14px 20px;}.nav-links{display:none;}
+  .hero{padding:64px 24px;text-align:center;}.hero-btns{justify-content:center;}
+  .stats,.menu-section{padding:40px 20px;}
+}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <div class="logo">🍹 Juice<span>Shop</span></div>
+  <div class="nav-links">
+    <a href="home.html" class="nav-link active">Home</a>
+    <a href="cart.html" class="nav-link">Cart</a>
+    <a href="contact.html" class="nav-link">Contact</a>
+    
+  </div>
+  <a href="cart.html" class="nav-cart">🛒 Cart</a>
+</nav>
+<section class="hero">
+  <div style="position:relative;z-index:2;max-width:520px;">
+    <span class="hero-badge">🌿 FRESH • NATURAL • HEALTHY</span>
+    <h1><span class="hi">Fresh</span> Juices<br/><span class="h2">Delivered</span> to<br/><span class="h3">Your Door</span></h1>
+    <p>Pure cold-pressed juices made from the freshest fruits. No preservatives, no shortcuts!</p>
+    <div class="hero-btns">
+      <a href="#menu" class="btn-pri">Order Now 🍊</a>
+      <a href="contact.html" class="btn-sec">Contact Us →</a>
+    </div>
+  </div>
+  <div class="hero-emojis">
+    <div class="emoji-row"><div class="e-ball e1">🍊</div><div class="e-ball e2">🥭</div></div>
+    <div class="emoji-row"><div class="e-ball e3">🍋</div><div class="e-ball e4">🍇</div></div>
+  </div>
+</section>
+<div class="stats">
+  <div class="stat"><div class="stat-num">500+</div><div class="stat-label">Happy Customers</div></div>
+  <div class="stat"><div class="stat-num">20+</div><div class="stat-label">Juice Varieties</div></div>
+  <div class="stat"><div class="stat-num">100%</div><div class="stat-label">Natural</div></div>
+  <div class="stat"><div class="stat-num">30 Min</div><div class="stat-label">Delivery</div></div>
+</div>
+<section class="menu-section" id="menu">
+  <div class="sec-head">
+    <span class="sec-tag">OUR FRESH MENU</span>
+    <h2>Our Fresh Juices</h2>
+    <p>All cold-pressed daily — pure, fresh, delicious</p>
+  </div>
+  <div class="juice-grid">
+    <div class="juice-card"><div class="card-top c-orange">🥭</div><div class="card-body"><h3>Mango Juice</h3><p>Sweet Alphonso mango cold-pressed to perfection</p><div class="card-footer"><span class="juice-price" style="color:#ff922b">₹50</span><button class="add-btn" style="background:linear-gradient(135deg,#ff922b,#ff6b6b)" onclick="addCart('Mango Juice',50)">+ Add</button></div></div></div>
+    <div class="juice-card"><div class="card-top c-green">🍏</div><div class="card-body"><h3>Apple Juice</h3><p>Crisp fresh apple juice — naturally sweet</p><div class="card-footer"><span class="juice-price" style="color:#6bcb77">₹15</span><button class="add-btn" style="background:linear-gradient(135deg,#6bcb77,#4d96ff)" onclick="addCart('Apple Juice',15)">+ Add</button></div></div></div>
+    <div class="juice-card"><div class="card-top c-orange">🍊</div><div class="card-body"><h3>Orange Juice</h3><p>Tangy sweet orange with burst of Vitamin C</p><div class="card-footer"><span class="juice-price" style="color:#ff6b6b">₹60</span><button class="add-btn" style="background:linear-gradient(135deg,#ff6b6b,#ff922b)" onclick="addCart('Orange Juice',60)">+ Add</button></div></div></div>
+    <div class="juice-card"><div class="card-top c-yellow">🍋</div><div class="card-body"><h3>Lemon Juice</h3><p>Refreshing lemon with hint of mint & salt</p><div class="card-footer"><span class="juice-price" style="color:#ffd93d">₹40</span><button class="add-btn" style="background:linear-gradient(135deg,#ffd93d,#ff922b)" onclick="addCart('Lemon Juice',40)">+ Add</button></div></div></div>
+    <div class="juice-card"><div class="card-top c-red">🍓</div><div class="card-body"><h3>Strawberry Juice</h3><p>Fresh strawberries blended with natural goodness</p><div class="card-footer"><span class="juice-price" style="color:#ff6b6b">₹75</span><button class="add-btn" style="background:linear-gradient(135deg,#ff6b6b,#a855f7)" onclick="addCart('Strawberry Juice',75)">+ Add</button></div></div></div>
+    <div class="juice-card"><div class="card-top c-purple">🍇</div><div class="card-body"><h3>Grape Juice</h3><p>Dark sweet grapes packed with antioxidants</p><div class="card-footer"><span class="juice-price" style="color:#a855f7">₹80</span><button class="add-btn" style="background:linear-gradient(135deg,#a855f7,#4d96ff)" onclick="addCart('Grape Juice',80)">+ Add</button></div></div></div>
+  </div>
+</section>
+<footer><div class="f-logo">🍹 Juice<span>Shop</span></div><p>Juice Shop © 2026 — Pure Freshness Delivered</p></footer>
+<script>
+	async function addCart(name, price) {
+
+	  try {
+	    const res = await fetch("http://localhost:8080/drink", {
+	      method: "POST",
+	      headers: {
+	        "Content-Type": "application/json"
+	      },
+	      body: JSON.stringify({
+	        name: name,
+	        price: price
+	      })
+	    });
+
+	    if (!res.ok) throw new Error();
+
+	    // success popup
+	    const t = document.createElement('div');
+	    t.textContent = `✅ ${name} added!`;
+	    t.style.cssText =
+	      'position:fixed;bottom:24px;right:24px;background:#1a1a2e;color:#ffd93d;padding:12px 22px;border-radius:12px;font-weight:700;z-index:999;';
+	    document.body.appendChild(t);
+	    setTimeout(() => t.remove(), 2500);
+
+	  } catch (err) {
+	    alert("❌ Failed to add item (Backend not connected)");
+	  }
+
+	}
+</script>
+</body>
+</html>

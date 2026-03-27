@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Juice Shop – Contact</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+:root{--c1:#ff6b6b;--c2:#ffd93d;--c3:#6bcb77;--c4:#4d96ff;--c5:#ff922b;--dark:#1a1a2e;--light:#f8f9fa;--gray:#6c757d;--font-h:'Syne',sans-serif;--font-b:'Nunito',sans-serif;--sh:0 4px 24px rgba(0,0,0,.1);--sh2:0 12px 40px rgba(0,0,0,.15);}
+body{font-family:var(--font-b);background:var(--light);color:var(--dark);}
+.nav{background:var(--dark);padding:16px 48px;display:flex;align-items:center;justify-content:space-between;}
+.logo{font-family:var(--font-h);font-size:1.6rem;color:#fff;text-decoration:none;}
+.logo span{color:var(--c2);}
+.nav-links{display:flex;gap:8px;}
+.nav-link{color:rgba(255,255,255,.7);text-decoration:none;padding:8px 18px;border-radius:50px;font-weight:600;font-size:.88rem;transition:all .2s;}
+.nav-link:hover,.nav-link.active{background:var(--c2);color:var(--dark);}
+.contact-hero{background:linear-gradient(135deg,var(--dark),#16213e);padding:60px 48px;text-align:center;}
+.contact-hero h1{font-family:var(--font-h);font-size:2.5rem;color:#fff;margin-bottom:10px;}
+.contact-hero h1 span{color:var(--c2);}
+.contact-hero p{color:rgba(255,255,255,.6);font-size:1.05rem;}
+.contact-wrap{max-width:960px;margin:0 auto;padding:56px 24px;}
+.contact-grid{display:grid;grid-template-columns:1fr 1.3fr;gap:32px;}
+.info-side{display:flex;flex-direction:column;gap:16px;}
+.info-card{background:#fff;border-radius:18px;padding:22px;box-shadow:var(--sh);display:flex;align-items:center;gap:16px;transition:all .25s;}
+.info-card:hover{transform:translateX(6px);}
+.info-icon{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;flex-shrink:0;}
+.ic1{background:linear-gradient(135deg,#ff6b6b,#ff922b);}
+.ic2{background:linear-gradient(135deg,#ffd93d,#ff922b);}
+.ic3{background:linear-gradient(135deg,#6bcb77,#4d96ff);}
+.ic4{background:linear-gradient(135deg,#4d96ff,#a855f7);}
+.info-text h4{font-family:var(--font-h);font-size:.95rem;margin-bottom:3px;}
+.info-text p{font-size:.83rem;color:var(--gray);}
+.form-box{background:#fff;border-radius:24px;padding:36px;box-shadow:var(--sh);}
+.form-box h2{font-family:var(--font-h);font-size:1.5rem;margin-bottom:6px;}
+.form-box p{color:var(--gray);font-size:.88rem;margin-bottom:28px;}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.form-group{margin-bottom:18px;}
+.form-label{display:block;font-size:.82rem;font-weight:700;margin-bottom:7px;text-transform:uppercase;letter-spacing:.04em;}
+.form-inp{width:100%;padding:12px 16px;border:2px solid #e5e7eb;border-radius:12px;font-family:var(--font-b);font-size:.93rem;outline:none;transition:all .2s;}
+.form-inp:focus{border-color:var(--c4);box-shadow:0 0 0 4px rgba(77,150,255,.1);}
+textarea.form-inp{resize:none;}
+.submit-btn{width:100%;background:linear-gradient(135deg,var(--c1),var(--c5));color:#fff;border:none;padding:16px;border-radius:50px;font-family:var(--font-b);font-weight:800;font-size:1rem;cursor:pointer;transition:all .3s;}
+.submit-btn:hover{transform:translateY(-2px);}
+#msg{margin-top:14px;padding:12px 16px;border-radius:10px;font-weight:600;font-size:.9rem;display:none;}
+#msg.success{background:#dcfce7;color:#16a34a;display:block;}
+#msg.error{background:#fee2e2;color:#dc2626;display:block;}
+footer{background:var(--dark);color:#fff;text-align:center;padding:28px;margin-top:0;}
+footer p{font-size:.82rem;color:rgba(255,255,255,.4);}
+@media(max-width:768px){.nav{padding:14px 20px;}.nav-links{display:none;}.contact-hero{padding:48px 20px;}.contact-wrap{padding:36px 16px;}.contact-grid{grid-template-columns:1fr;}.form-row{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <a href="home.html" class="logo">🍹 Juice<span>Shop</span></a>
+  <div class="nav-links">
+    <a href="home.html" class="nav-link">Home</a>
+    <a href="cart.html" class="nav-link">Cart</a>
+    <a href="contact.html" class="nav-link active">Contact</a>
+    
+  </div>
+</nav>
+<div class="contact-hero">
+  <h1>Get in <span>Touch</span> 👋</h1>
+  <p>We'd love to hear from you!</p>
+</div>
+<div class="contact-wrap">
+  <div class="contact-grid">
+    <div class="info-side">
+      <div class="info-card"><div class="info-icon ic1">📍</div><div class="info-text"><h4>Location</h4><p>42, Gandhi Nagar, Chennai</p></div></div>
+      <div class="info-card"><div class="info-icon ic2">📞</div><div class="info-text"><h4>Phone</h4><p>+91 98765 43210</p></div></div>
+      <div class="info-card"><div class="info-icon ic3">🕐</div><div class="info-text"><h4>Hours</h4><p>Mon–Sun: 7AM – 9PM</p></div></div>
+      <div class="info-card"><div class="info-icon ic4">📧</div><div class="info-text"><h4>Email</h4><p>hello@juiceshop.in</p></div></div>
+    </div>
+    <div class="form-box">
+      <h2>Send a Message 💬</h2>
+      <p>Fill the form and we'll reply within 24 hours</p>
+      <div class="form-row">
+        <div class="form-group"><label class="form-label">Name</label><input class="form-inp" id="fname" type="text" placeholder="Your Name"/></div>
+        <div class="form-group"><label class="form-label">Email</label><input class="form-inp" id="femail" type="email" placeholder="you@email.com"/></div>
+      </div>
+      <div class="form-group"><label class="form-label">Phone</label><input class="form-inp" id="fphone" type="tel" placeholder="+91 9876543210"/></div>
+      <div class="form-group"><label class="form-label">Message</label><textarea class="form-inp" id="fmsg" rows="4" placeholder="Write your message..."></textarea></div>
+      <button class="submit-btn" onclick="sendMsg()">Send Message 🚀</button>
+      <div id="msg"></div>
+    </div>
+  </div>
+</div>
+<footer><p>Juice Shop © 2026 — Pure Freshness Delivered</p></footer>
+<script>
+function sendMsg(){
+  const name=document.getElementById('fname').value.trim();
+  const email=document.getElementById('femail').value.trim();
+  const msg=document.getElementById('fmsg').value.trim();
+  const div=document.getElementById('msg');
+  if(!name||!email||!msg){div.textContent='⚠️ Fill Name, Email & Message!';div.className='error';return;}
+  div.textContent=`✅ Message sent! We'll reply to ${email} soon. Thank you, ${name}! 🎉`;
+  div.className='success';
+  document.getElementById('fname').value='';document.getElementById('femail').value='';
+  document.getElementById('fphone').value='';document.getElementById('fmsg').value='';
+}
+</script>
+</body>
+</html>
