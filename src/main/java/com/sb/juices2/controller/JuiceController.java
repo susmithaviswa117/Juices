@@ -19,13 +19,13 @@ public class JuiceController {
     // ✅ ROOT → redirect to home.html
     @GetMapping("/")
     public String root() {
-        return "redirect:/home.html";
+        return "redirect:/index.html";
     }
 
     // ✅ /home → home.html
     @GetMapping("/home")
     public String home() {
-        return "redirect:/home.html";
+        return "redirect:/index.html";
     }
 
     // ✅ /cart → cart.html
